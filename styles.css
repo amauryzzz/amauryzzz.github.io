@@ -1,0 +1,105 @@
+/* styles.css */
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Pour éviter le défilement */
+    --x: 0px;
+    --y: 0px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 130%; /* Augmenter la taille pour éviter les bordures blanches */
+    height: 130%; /* Augmenter la taille pour éviter les bordures blanches */
+    background-image: url('/source/peakpx.jpg');
+    background-size: cover; /* Assurer la couverture complète */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Pour que l'image de fond soit derrière le contenu */
+    transition: transform 0.1s ease-out;
+    transform: translate(var(--x), var(--y)) scale(1.1); /* Ajuster le zoom si nécessaire */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Animation de fondu pour le titre */
+}
+
+header h1 {
+    font-size: 5rem;
+    color: #f6f6f6;
+    margin: 1;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc; /* Couleur du sous-titre */
+    margin-bottom: 0; /* Ajuster l'espacement */
+    font-style: italic;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#social-links {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    margin-top: 8rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s; /* Animation de fondu pour les liens sociaux avec un délai */
+    transition: opacity 0.3s ease;
+}
+
+#social-links div {
+    margin: 0 1rem;
+    opacity: 0;
+    animation: fadeInLinks 1s forwards;
+}
+
+#social-links div:nth-child(1) { animation-delay: 1.5s; }
+#social-links div:nth-child(2) { animation-delay: 1.8s; }
+#social-links div:nth-child(3) { animation-delay: 2.1s; }
+#social-links div:nth-child(4) { animation-delay: 2.4s; }
+
+#social-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #f6f6f6;
+    transition: color 0.3s ease, transform 0.2s ease; /* Ajouter une transition pour la couleur et la transformation */
+    font-style: italic; /* Mettre les liens en italique */
+}
+
+#social-links a:hover {
+    color: #bdbdbd;
+    transform: scale(1.1); /* Agrandir le lien de 10% au survol */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLinks {
+    to {
+        opacity: 1;
+    }
+}

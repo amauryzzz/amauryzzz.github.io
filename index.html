@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙂</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>slight.smile</h1>
+    <p>Amaury, 21 years old web developer from Paris.</p>
+</header>
+<main>
+    <section id="social-links">
+        <div>
+            <a href="https://github.com/amauryzzz" target="_blank">gith.ub</a>
+        </div>
+        <div>
+            <a href="https://twitter.com/slightsmile_" target="_blank">twit.ter</a>
+        </div>
+        <div>
+            <a href="https://discord.com/invite/tonpseudo" target="_blank">disc.ord</a>
+        </div>
+        <div>
+            <a href="https://www.op.gg/summoners/euw/Usogui-ADHD" target="_blank">opg.g</a>
+        </div>
+    </section>
+</main>
+
+<script>
+    document.addEventListener('mousemove', function(e) {
+        const { clientX, clientY } = e;
+        const x = (clientX / window.innerWidth) - 0.5;
+        const y = (clientY / window.innerHeight) - 0.5;
+
+        document.body.style.setProperty('--x', `${x * 20}px`);
+        document.body.style.setProperty('--y', `${y * 20}px`);
+    });
+</script>
+</body>
+</html>
